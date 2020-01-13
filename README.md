@@ -14,13 +14,15 @@ cd casino-lobby
    
 npm install or yarn install
 
-As SPA
-ng serve --ssl
-
-As SSR
+As SSR   
 npm run build:ssr
 
 npm run serve:ssr
+
+As SPA   
+ng serve --ssl
+
+Also hosted [here](https://code.fairmutex.com/projects/web/casino-lobby/) as a SPA
 
 ## Executing Tests
 npm test
@@ -41,6 +43,3 @@ Caching of remote images with service workers need to investigate if [this](http
 ## Could Have
 
 Virtual Paginator since there are a lot of images and because of the above can't leverage caching and Chrome Audits is indicating images could be in a better suited format.
-
-
-

@@ -49,7 +49,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
     MaterialModule,
     AppLayoutModule,
     // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    // ServiceWorkerModule.register('ngsw-worker.js', { enabled: true }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: true }),
 
     // environment.production !== true ? HttpClientInMemoryWebApiModule.forRoot(GamesData, { delay: 4000 }) : [],
     HttpClientInMemoryWebApiModule.forRoot(GamesData, { delay: 0 }) ,
