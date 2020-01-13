@@ -43,3 +43,5 @@ Caching of remote images with service workers need to investigate if [this](http
 ## Could Have
 
 Virtual Paginator since there are a lot of images and because of the above can't leverage caching and Chrome Audits is indicating images could be in a better suited format.
+
+CDN for images

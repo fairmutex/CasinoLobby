@@ -1,4 +1,5 @@
-<div class='game-detail' [ngStyle]="{background: 'url('+ game?.background + ')'}">
+<div class='game-detail'
+    [ngStyle]="{'background': 'url('+ game?.background + ')', 'background-repeat': 'no-repeat', 'background-position': 'center center', 'background-attachment': 'fixed', 'background-size': 'cover'}">
     <div class="game-container">
 
         <mat-card>
