@@ -1,0 +1,25 @@
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { GameDetailsShellComponent } from './game-details-shell.component';
+
+describe('GameDetailsShellComponent', () => {
+  let component: GameDetailsShellComponent;
+  let fixture: ComponentFixture<GameDetailsShellComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ GameDetailsShellComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(GameDetailsShellComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

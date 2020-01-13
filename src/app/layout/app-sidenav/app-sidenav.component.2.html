@@ -1,0 +1,97 @@
+<mat-sidenav-container  class="app-sidenav-container" 
+    [class.dark-theme]="appLayoutService.isDarktheme" [dir]='appLayoutService.dir'>
+    <mat-sidenav  #sidenav class='app-sidenav mat-elevation-z10' [opened]='!appLayoutService.isScreenSmall()'
+        [mode]="appLayoutService.isScreenSmall() ? 'over': 'side'">
+        <mat-toolbar color="primary">
+            
+                  <!--future svg to go here-->
+      <span class="toolbar-filler">Options</span>
+
+
+      <!-- <button mat-button class="sidenav-toggle" (click)="toggleSidenav.emit()">
+        <mat-icon>close</mat-icon>
+    </button> -->
+        </mat-toolbar>
+        
+        <mat-nav-list  *ngIf="licenceType$ | async as licenceType">
+
+             <a mat-list-item [routerLink]="['/',translate.currentLang,licenceType,'Study']" class='menu-item' routerLinkActive="active-list-item" 
+             [matTooltip]="'buttons.study.tooltip' | translate"
+             attr.aria-label="{{'buttons.study.arialabel' | translate}}">
+                <mat-icon fontSet="fas" fontIcon="fa-book-open"></mat-icon>{{'buttons.study.caption' | translate}}</a>
+
+            <a mat-list-item [routerLink]="['/',translate.currentLang,licenceType,'test']" class='menu-item' routerLinkActive="active-list-item"
+            [matTooltip]="'buttons.test.tooltip' | translate"
+             attr.aria-label="{{'buttons.test.arialabel' | translate}}">         
+                <mat-icon fontSet="fas" fontIcon="fa-pencil-ruler"></mat-icon>{{'buttons.test.caption' | translate}}</a>
+
+            <a mat-list-item [routerLink]="['/',translate.currentLang,'score']" class='menu-item' routerLinkActive="active-list-item"
+            [matTooltip]="'buttons.score.tooltip' | translate"
+             attr.aria-label="{{'buttons.score.arialabel' | translate}}">
+                <mat-icon fontSet="fas" fontIcon="fa-trophy"></mat-icon>{{'buttons.score.caption' | translate}}</a>
+
+            <a mat-list-item [routerLink]="['/',translate.currentLang,'resources']" class='menu-item' routerLinkActive="active-list-item"
+            [matTooltip]="'buttons.resources.tooltip' | translate"
+             attr.aria-label="{{'buttons.resources.arialabel' | translate}}">
+                <mat-icon fontSet="fas" fontIcon="fa-info-circle"></mat-icon>{{'buttons.resources.caption' | translate}}</a>
+
+            <a mat-list-item [routerLink]="['/',translate.currentLang,'about']" class='menu-item' routerLinkActive="active-list-item">
+                <mat-icon fontSet="fas" fontIcon="fa-sticky-note"></mat-icon>TOS</a>
+            <!-- <a mat-list-item [routerLink]="'/create-activity'"> Create Activity </a>
+            <a mat-list-item (click)="appLayoutService.toggleSidenav()" mat-list-item>Close</a> 
+        <button mat-raised-button (click)="openAll()">Open All</button> -->
+        </mat-nav-list>
+        <!-- <ng-material-multilevel-menu [configuration]='config' [items]='appitems' (selectedItem)="selectedItem($event)">
+        </ng-material-multilevel-menu> -->
+        <!-- <mat-nav-list>
+            <a mat-list-item (click)="openAll()"> Expand Menu </a>
+            <a mat-list-item (click)="closeAll()"> Collapse Menu </a>
+        </mat-nav-list>
+        <mat-accordion #menu='matAccordion' displayMode="flat" multi="true">
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Personal data
+                    </mat-panel-title>
+
+                </mat-expansion-panel-header>
+
+                <mat-form-field>
+                    <input matInput placeholder="First name">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput placeholder="Age">
+                </mat-form-field>
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Self aware panel
+                    </mat-panel-title>
+
+                </mat-expansion-panel-header>
+                <p>I'm visible because I am open</p>
+            </mat-expansion-panel>
+        </mat-accordion> -->
+
+        <!-- <mat-toolbar color="primary">
+            Contacts
+        </mat-toolbar>
+
+        <mat-nav-list>
+            <mat-list-item *ngFor="let user of (users$ | async)">
+                <a matLine [routerLink]="['/contactmanager',user.id]">
+                    <mat-icon svgIcon="{{user.avatar}}"></mat-icon>{{ user.name }}
+                </a>
+
+        </mat-list-item>
+        </mat-nav-list> -->
+
+
+    </mat-sidenav>
+
+    <mat-sidenav-content  style="overflow: hidden;" class="app-sidenav-content">
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+</mat-sidenav-container>

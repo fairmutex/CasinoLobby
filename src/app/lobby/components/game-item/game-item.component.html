@@ -1,0 +1,23 @@
+<div class='game-box-container' (click)='gameItemClicked.emit(game?.id)'>
+    <div class='game-box'>
+
+        <div class="ribbon"><span>NEW</span></div>
+        <div class='game-box-under'>
+            <img [src]="game?.icon_2" [alt]="game?.name" onerror="this.src='assets/images/fallback.png';" />
+            
+            <div>
+                <div class='game-item-name'>{{game?.name}}</div>
+                <div class='game-item-provider'>{{game?.show_as_provider}}</div>
+            </div>
+        </div>
+
+        <div class='game-box-overlay'>
+            <a  class="game-box-btn btn-play" *ngIf='game?.types.realMode == 1' (click)='playClicked.emit(game?.id)'>
+                PLAY NOW
+            </a>
+            <a class="game-box-btn  btn-practice" *ngIf='game?.types.funMode == 1' (click)='practiceClicked.emit(game?.id)'>
+                Practice
+            </a>
+        </div>
+    </div>
+</div>

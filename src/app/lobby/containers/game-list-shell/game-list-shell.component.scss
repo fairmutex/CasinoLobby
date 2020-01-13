@@ -1,0 +1,23 @@
+:host{
+    margin:20px;
+}
+
+
+.game-box-container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr) ) ;
+    width: 100%;
+    position:relative;
+
+}
+
+
+.game-list-bar{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom:10px;
+}
+
+

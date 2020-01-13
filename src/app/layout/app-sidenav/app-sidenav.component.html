@@ -1,0 +1,21 @@
+<mat-sidenav-container class="app-sidenav-container" [dir]='appLayoutService.dir'>
+    <mat-sidenav #sidenav class='app-sidenav mat-elevation-z10' [opened]='!appLayoutService.isScreenSmall()'
+        [mode]="appLayoutService.isScreenSmall() ? 'over': 'side'">
+        <mat-toolbar color="primary">
+            <span class="toolbar-filler">777</span>
+        </mat-toolbar>
+        <mat-nav-list>
+            <a mat-list-item [routerLink]="'/lobby'" class='menu-item' routerLinkActive="active-list-item"
+                matTooltip="Games Lobby" aria-label="Games Lobby">
+                <mat-icon fontSet="fas" fontIcon="fa-dice"></mat-icon>Lobby
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="app-sidenav-content">
+        <app-toolbar  (toggleSidenav)="sidenav.toggle()">
+        </app-toolbar>
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

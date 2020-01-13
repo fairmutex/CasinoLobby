@@ -1,0 +1,13 @@
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+
+body {
+  margin: 0;
+  text-align: justify;
+  text-justify: auto;
+}
+// fix fontawesome icons allignment in buttons
+button .mat-icon {
+  height: auto;
+}
+
+

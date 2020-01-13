@@ -1,0 +1,31 @@
+<div class='game-detail' [ngStyle]="{background: 'url('+ game?.background + ')'}">
+    <div class="game-container">
+
+        <mat-card>
+            <div class="game-header">
+                <div class="header-left">
+                    <button mat-button (click)='backClicked.emit()'>
+                        <mat-icon fontSet="fa" fontIcon="fa-arrow-left"></mat-icon>
+                    </button>
+                </div>
+
+                <div class="header-right">
+                    <button mat-button (click)='backClicked.emit()'>
+                        <mat-icon fontSet="fa" fontIcon="fa-times"></mat-icon>
+                    </button>
+                </div>
+
+            </div>
+            <h1>
+                {{game?.name}}
+            </h1>
+            <div class="game-body">
+                <iframe class="game-client"
+                    src="https://betconstruct-static.casinomodule.com/games/wildturkey_mobile_html/game/wildturkey_mobile_html.xhtml?gameId=wildturkey_not_mobile_sw&amp;fullScreen=true&amp;lobbyURL=%23%2Fcasino&amp;server=https%3A%2F%2Fbetconstruct-game.casinomodule.com%2F&amp;lang=en&amp;sessId=DEMO-4786314515282-EUR&amp;operatorId=default"
+                    frameborder="5" allow="autoplay;" autoplay="" style="width: 762px; height: 429px;"></iframe>
+            </div>
+        </mat-card>
+
+
+    </div>
+</div>

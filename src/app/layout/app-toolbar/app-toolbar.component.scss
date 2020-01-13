@@ -1,0 +1,50 @@
+$iconWidth: 56px;
+
+.position-fixed {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.sidenav-toggle{
+  // display:none;
+
+  padding:0;
+  margin:8px;
+  min-width: $iconWidth;
+
+
+  // mat-icon{
+  //   font-size: 30px;
+  //   height:$iconWidth;
+  //   width:$iconWidth;
+  //   line-height:$iconWidth;
+  //   color:white;
+  // }
+}
+
+
+.sidenav-button{
+
+  padding:0;
+  margin:8px;
+  min-width: $iconWidth;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+  mat-icon{
+    font-size: 30px;
+    height:$iconWidth;
+    width:$iconWidth;
+    line-height:$iconWidth;
+    color:white;
+  }
+}

@@ -1,0 +1,32 @@
+<div class='game-list-bar'>
+  <!-- <mat-form-field appearance="outline">
+    <input matInput placeholder="Search" value="" #gamesearch (keyup)='searchGamesByName(gamesearch.value)'>
+  </mat-form-field> -->
+
+<mat-form-field appearance="outline">
+  <mat-label>Search</mat-label>
+  <input matInput placeholder="Games" value="" #gamesearch (keyup)='searchGamesByName(gamesearch.value)'>
+  <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+  <mat-icon matSuffix fontSet="fas" fontIcon="fa-search"></mat-icon>
+</mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Filter by Category</mat-label>
+    <mat-select (selectionChange)="getGamesByCategory($event)" aria-label='Filter by Category'>
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let category of categories$ | async" [value]="category?.id">{{category?.title}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+
+<div *ngIf="(isLoading$ | async)">
+  <mat-spinner></mat-spinner>
+</div>
+
+<div class='game-box-container' *ngIf="!(isLoading$ | async)">
+  <app-game-item *ngFor="let game of (games$ | async)" [game]='game' 
+      (playClicked)='playClicked(game.key)'
+      (practiceClicked)='practiceClicked(game.key)'>
+  </app-game-item>
+</div>
